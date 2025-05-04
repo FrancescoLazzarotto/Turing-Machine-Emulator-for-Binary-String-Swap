@@ -2,44 +2,44 @@ import time
 
 while True:
     try:
-        n_cin = int(input("Enter the number of states: "))
+        n_cin = int(input("Inserisci numeri di stato: "))
         if n_cin >= 1:
             break
         else:
-            print("Enter a number greater than or equal to 1.")
+            print("Inserisci un numero maggiore o uguale a 1.")
     except ValueError:
-        print("Enter a valid number.")
+        print("Inserisci un numero valido.")
 
 pos = []
 for i in range(n_cin):
     while True:
         try:
-            pos_input = int(input(f"Enter the number of inputs for state {i}: "))
+            pos_input = int(input(f"Inserisci i numeri di input per lo stato {i}: "))
             if pos_input >= 1:
                 pos.append(pos_input)
                 break
             else:
-                print("Enter a number greater than or equal to 1.")
+                print("Inserisci un numero maggiore o uguale a 1.")
         except ValueError:
-            print("Enter a valid number.")
+            print("Inserisci un numero valido")
 
-print("\nEnter commands (state-read-write-position):")
+print("\nInserisci comando(stato-lettura-scrittura-posizione):")
 comandi = [input() for _ in range(sum(pos))]
 
-print("\nEnter the string between two #:")
+print("\nInserisci la stringa fra due #:")
 str_input = input().split("#")[1]
 
 print(f"\n{str_input}\n")
 
 while True:
     try:
-        cella = int(input(f"Enter the starting cell number (between 1 and {len(str_input)}): "))
+        cella = int(input(f"Inserisci il numero di cella di inizio (fra 1 e{len(str_input)}): "))
         if 1 <= cella <= len(str_input):
             break
         else:
-            print(f"Enter a number between 1 and {len(str_input)}.")
+            print(f"Inserisci un numero (fra 1 e {len(str_input)}.")
     except ValueError:
-        print("Enter a valid number.")
+        print("Inserisci un numero valido.")
 
 print(f"{str_input}")
 print(" " * (cella - 1) + "|")
